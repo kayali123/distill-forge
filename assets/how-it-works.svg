@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="t d" font-family="-apple-system,'SF Pro Display','PingFang SC','Microsoft YaHei',sans-serif">
+  <title id="t">distill-forge 工作原理</title>
+  <desc id="d">五步流水线:选定人物 → 六路采集公开资料 → 三重验证与逐字溯源(拦截 AI 编造) → 提炼心智模型 → 生成可复用的视角 skill。</desc>
+  <defs>
+    <style>
+      .bg{fill:#0b0b0d;stroke:#26262b;stroke-width:1.5}
+      .h1{fill:#f5f5f7;font-size:46px;font-weight:600}
+      .sub{fill:#86868b;font-size:21px;font-weight:400}
+      .lab{fill:#f5f5f7;font-size:19px;font-weight:500;text-anchor:middle}
+      .emo{font-size:36px;text-anchor:middle}
+      .ring{fill:#1c1c20;stroke:#3a3a40;stroke-width:1.5}
+      .node{opacity:.35}
+      .n1{animation:n1 9s infinite}.n2{animation:n2 9s infinite}.n3{animation:n3 9s infinite}
+      .n4{animation:n4 9s infinite}.n5{animation:n5 9s infinite}
+      .base{stroke:#2a2a2e;stroke-width:3;fill:none}
+      .fill{stroke:#2997ff;stroke-width:3;fill:none;stroke-linecap:round;stroke-dasharray:840;stroke-dashoffset:840;animation:draw 9s infinite}
+      .dot{animation:move 9s infinite}
+      .vtag{opacity:0;animation:vtag 9s infinite}
+      .rtag{opacity:0;animation:rtag 9s infinite}
+      .tagbox{rx:13}
+      @keyframes n1{0%,4%{opacity:.35}9%,95%{opacity:1}100%{opacity:.35}}
+      @keyframes n2{0%,21%{opacity:.35}26%,95%{opacity:1}100%{opacity:.35}}
+      @keyframes n3{0%,39%{opacity:.35}44%,95%{opacity:1}100%{opacity:.35}}
+      @keyframes n4{0%,59%{opacity:.35}64%,95%{opacity:1}100%{opacity:.35}}
+      @keyframes n5{0%,77%{opacity:.35}83%,95%{opacity:1}100%{opacity:.35}}
+      @keyframes draw{0%,4%{stroke-dashoffset:840}86%,96%{stroke-dashoffset:0}100%{stroke-dashoffset:840}}
+      @keyframes move{0%,4%{transform:translateX(0);opacity:0}8%{opacity:1}86%{transform:translateX(840px);opacity:1}92%,100%{transform:translateX(840px);opacity:0}}
+      @keyframes vtag{0%,40%{opacity:0}46%,90%{opacity:1}96%,100%{opacity:0}}
+      @keyframes rtag{0%,43%{opacity:0;transform:translateY(0)}47%,55%{opacity:1;transform:translateY(0)}62%,100%{opacity:0;transform:translateY(20px)}}
+    </style>
+  </defs>
+
+  <rect class="bg" x="8" y="8" width="1184" height="584" rx="26"/>
+  <text class="h1" x="60" y="92">🧬 distill-forge</text>
+  <text class="sub" x="62" y="128">把任何人的思维方式,蒸馏成一个带逐字溯源的「视角」skill</text>
+
+  <line class="base" x1="170" y1="330" x2="1010" y2="330"/>
+  <line class="fill" x1="170" y1="330" x2="1010" y2="330"/>
+
+  <g class="node n1">
+    <circle class="ring" cx="170" cy="330" r="40"/>
+    <text class="emo" x="170" y="343">👤</text>
+    <text class="lab" x="170" y="408">选定人物</text>
+  </g>
+  <g class="node n2">
+    <circle class="ring" cx="380" cy="330" r="40"/>
+    <text class="emo" x="380" y="343">📚</text>
+    <text class="lab" x="380" y="408">六路采集</text>
+  </g>
+  <g class="node n3">
+    <circle class="ring" cx="590" cy="330" r="40"/>
+    <text class="emo" x="590" y="343">🔍</text>
+    <text class="lab" x="590" y="408">验证·溯源</text>
+  </g>
+  <g class="node n4">
+    <circle class="ring" cx="800" cy="330" r="40"/>
+    <text class="emo" x="800" y="343">🧠</text>
+    <text class="lab" x="800" y="408">提炼框架</text>
+  </g>
+  <g class="node n5">
+    <circle class="ring" cx="1010" cy="330" r="40"/>
+    <text class="emo" x="1010" y="343">✨</text>
+    <text class="lab" x="1010" y="408">生成 skill</text>
+  </g>
+
+  <g class="dot">
+    <circle cx="170" cy="330" r="15" fill="#2997ff" opacity="0.25"/>
+    <circle cx="170" cy="330" r="6" fill="#2997ff"/>
+  </g>
+
+  <g class="vtag">
+    <rect x="468" y="476" width="244" height="40" rx="13" fill="#10240f" stroke="#30d158" stroke-width="1.5"/>
+    <text x="590" y="502" text-anchor="middle" font-size="19" fill="#30d158">✓ 一手原话 · 逐字已核验</text>
+  </g>
+  <g class="rtag">
+    <rect x="476" y="218" width="228" height="40" rx="13" fill="#2a0f0f" stroke="#ff453a" stroke-width="1.5"/>
+    <text x="590" y="244" text-anchor="middle" font-size="19" fill="#ff453a">✗ AI 编造 · 已拦截</text>
+  </g>
+</svg>
